@@ -1,32 +1,20 @@
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { Tabs } from 'expo-router';
+import { Tabs } from "expo-router";
+import { Animated, Easing } from "react-native";
 
-export default function TabLayout() {
+export default function Layout() {
   return (
-    <Tabs screenOptions={{ tabBarActiveTintColor: 'blue' }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <FontAwesome size={28} name="home" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="project"
-        options={{
-          title: 'project',
-          tabBarIcon: ({ color }) => <FontAwesome size={28} name="cog" color={color} />,
-        }}
-        />
-        <Tabs.Screen
-        name="contact"
-        options={{
-          title: 'contact',
-          tabBarIcon: ({ color }) => <FontAwesome size={28} name="cog" color={color} />,
-        }}
-      />
+    <Tabs
+      screenOptions={{
+        headerStyle: { backgroundColor: "#0d0d0d" },
+        headerTintColor: "#fff",
+        tabBarStyle: { backgroundColor: "#0d0d0d", borderTopColor: "#222" },
+        tabBarActiveTintColor: "#4da6ff",
+        tabBarInactiveTintColor: "#888",
+      }}
+    >
+      <Tabs.Screen name="index" options={{ title: "Home" }} />
+      <Tabs.Screen name="contact" options={{ title: "Contact" }} />
+      <Tabs.Screen name="projects" options={{ title: "Projects" }} />
     </Tabs>
   );
 }
-
-    
